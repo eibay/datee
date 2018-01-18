@@ -1,5 +1,5 @@
 {
-  "name": "daty",
+  "name": "datee",
   "version": "1.0.0",
   "description": "CLI implementation of Date Difference counter Daty",
   "main": "index.js",
@@ -26,7 +26,8 @@
     "chai": "^4.1.2",
     "chai-arrays": "2.0.0",
     "mocha": "^4.1.0",
-    "rimraf": "2.6.2"
+    "rimraf": "2.6.2",
+    "standard": "10.0.3"
   },
   "@std/esm": {
     "cjs": true,
@@ -34,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eibay/daty.git"
+    "url": "git+https://github.com/eibay/datee.git"
   },
   "keywords": [
     "days",
@@ -45,7 +46,7 @@
   "author": "Elmer Ibayan <eibayan@gmail.com> (http://eibayan.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eibay/daty/issues"
+    "url": "https://github.com/eibay/datee/issues"
   },
-  "homepage": "https://github.com/eibay/daty#readme"
+  "homepage": "https://github.com/eibay/datee#readme"
 }
