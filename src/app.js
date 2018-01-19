@@ -1,5 +1,5 @@
 import Readline from 'readline'
-import { getInput, verifyInput, getOutput, MIN_YEAR, MAX_YEAR } from './daty'
+import { getInput, verifyInput, getOutput, MIN_YEAR, MAX_YEAR } from './datee'
 
 let messagePrompt = "Enter date as: 15 04 1969, 12 09 1945\n"
 

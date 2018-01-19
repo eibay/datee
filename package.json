@@ -2,32 +2,22 @@
   "name": "datee",
   "version": "1.0.0",
   "description": "CLI implementation of Date Difference counter Daty",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "npm start",
+    "start": "node ./src/index.js",
     "dev": "npm test -w",
-    "compile": "babel --presets es2015",
-    "test": "mocha --compilers js:babel-core/register ./test/*.js -u bdd -R spec -t 500 -w",
-    "prebuild": "rimraf dist",
-    "build": "babel  --copy-files -d dist --ignore *./test/*.js src"
+    "test": "mocha ./test/index.spec.js -u bdd -R spec -t 500 -w"
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
   "devDependencies": {
     "@std/esm": "0.19.3",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "6.24.1",
-    "babel-register": "6.26.0",
     "chai": "^4.1.2",
     "chai-arrays": "2.0.0",
     "mocha": "^4.1.0",
     "rimraf": "2.6.2",
     "standard": "10.0.3"
+  },
+  "bin": {
+    "datee": "./src/index.js"
   },
   "@std/esm": {
     "cjs": true,

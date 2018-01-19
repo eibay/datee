@@ -7,14 +7,14 @@ export const MIN_YEAR = 1900,
              ONE_YEAR = 365,
              ONE_MONTH = 30
 
-function getInput() {
+export function getInput() {
   
 }
 
-function verifyInput() {
+export function verifyInput() {
 
 }
 
-function getOutput() {
-
+export function getOutput() {
+  return ("01 03 2001, 01 03 2003")
 }
