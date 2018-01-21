@@ -1,24 +1,16 @@
-export const MIN_YEAR = 1900,
-             MAX_YEAR = 2010,
-             MIN_MONTH = 1,
-             MAX_MONTH = 12,
-             MIN_DAY = 1,
-             MAX_DAY = 31,
-             ONE_YEAR = 365,
-             ONE_MONTH = 30,
-             FIRST_MONTH_INDEX = 1
+import * as C from './constants'
 
-let DAYS_DIFFERENCE = [0, 0, 0, 0, 0],
-    TOTAL = 0,
-    LEAP_YEARS = [],
-    INPUT_DATES = (""),
-    START_DATE = [],
-    END_DATE = [],
-    IS_YEAR_VALID = false,
-    IS_MONTH_VALID = false,
-    IS_DAY_VALID = false 
-let C = []
-// Main: Getting Input
+let
+  DAYS_DIFFERENCE = [0, 0, 0, 0, 0],
+  TOTAL = 0,
+  LEAP_YEARS = [],
+  INPUT_DATES = (""),
+  START_DATE = [],
+  END_DATE = [],
+  IS_YEAR_VALID = false,
+  IS_MONTH_VALID = false,
+  IS_DAY_VALID = false 
+
 export function getInput(input) {
   reset()
   let a = getDates(input)
@@ -47,8 +39,8 @@ export function compareDates(start, end) {
 }
 
 export function isBetween(start, end) {
-  return ((MAX_YEAR >= start[2] && start[2] >= MIN_YEAR))
-    && ((MAX_YEAR >= end[2] && end[2] >= MIN_YEAR))
+  return ((C.MAX_YEAR >= start[2] && start[2] >= C.MIN_YEAR))
+    && ((C.MAX_YEAR >= end[2] && end[2] >= C.MIN_YEAR))
     ? true : false
 }
 
@@ -101,15 +93,14 @@ export function getOutput() {
   return ("01 03 2001, 01 03 2003")
 }
 
-
 // Setup And Other Functions Library
 function reset() {
   TOTAL = 0,
-    LEAP_YEARS = [],
-    INPUT_DATES = (""),
-    START_DATE = [],
-    END_DATE = [],
-    IS_YEAR_VALID = false,
-    IS_MONTH_VALID = false,
-    IS_DAY_VALID = false
+  LEAP_YEARS = [],
+  INPUT_DATES = (""),
+  START_DATE = [],
+  END_DATE = [],
+  IS_YEAR_VALID = false,
+  IS_MONTH_VALID = false,
+  IS_DAY_VALID = false
 }
