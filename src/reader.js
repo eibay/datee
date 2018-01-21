@@ -1,4 +1,4 @@
-import * as Daty from './datee'
+import * as Datee from './datee'
 
 const readline = require('readline');
 const fs = require('fs');
@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 
 rl.on('line', (line) => {
   console.log(`----------------------------------------`)
-  Daty.getInput(line)
+  Datee.getInput(line)
   console.log(" Input> ", line)
-  console.log("Output> ", Daty.getOutput())
+  console.log("Output> ", Datee.getOutput())
 });
