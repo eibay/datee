@@ -56,7 +56,7 @@ export function setInputDate(start, end) {
   if (end[2] > start[2]) {
     setDatesInput(start, end)
   } else if (end[2] == start[2]) {
-    isMonthValid(start, end)
+    // isMonthValid(start, end)
   } else {
     setDatesInputReverse(start, end)
   }
@@ -66,6 +66,12 @@ export function setDatesInput(start, end) {
   setInputDates(start, end)
   START_DATE = dateToInt(start)
   END_DATE = dateToInt(end)
+}
+
+export function setDatesInputReverse(start, end) {
+  setInputDates(end, start)
+  START_DATE = dateToInt(end)
+  END_DATE = dateToInt(start)
 }
 
 export function setInputDates(start, end) {

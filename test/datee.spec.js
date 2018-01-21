@@ -10,6 +10,12 @@ describe('Datee', function() {
       let result = Datee.getInputDates()
       expect(result).to.be.equal("01 03 2001, 01 03 2002")
     })
+    it('2: should get reverse input and set input dates accordingly', function () {
+      Datee.getInput("01 03 2002, 01 03 2001")
+      let result = Datee.getInputDates()
+      expect(result).to.be.equal("01 03 2001, 01 03 2002")
+    })
   })
+
 })
 
