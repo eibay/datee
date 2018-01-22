@@ -12,5 +12,5 @@ rl.on('line', (line) => {
   console.log(`----------------------------------------`)
   Input.getInput(line)
   console.log(" Input> ", line)
-  console.log("Output> ", Input.getOutput())
+  console.log("Output> ", Output.getOutput())
 });
