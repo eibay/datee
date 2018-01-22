@@ -1,6 +1,9 @@
 import * as C from './constants'
+import * as V from './validate'
+import * as S from './set'
 
-let
+
+export let 
   DAYS_DIFFERENCE = [0, 0, 0, 0, 0],
   TOTAL = 0,
   LEAP_YEARS = [],
@@ -30,56 +33,29 @@ function splitDates(dates) {
 }
 
 export function compareDates(start, end) {
-  if (isBetween(start, end)) {
+  if (V.isBetween(start, end)) {
     // setYearValid(true)
-    setInputDate(start, end)
+    S.setInputDate(start, end)
   } else {
     // setYearValid(false)
   }
 }
 
-export function isBetween(start, end) {
-  return ((C.MAX_YEAR >= start[2] && start[2] >= C.MIN_YEAR))
-    && ((C.MAX_YEAR >= end[2] && end[2] >= C.MIN_YEAR))
-    ? true : false
+export function setInputs(dates) {
+  INPUT_DATES = dates
 }
 
-export function setInputDate(start, end) {
-  if (end[2] > start[2]) {
-    setDatesInput(start, end)
-  } else if (end[2] == start[2]) {
-    // isMonthValid(start, end)
-  } else {
-    setDatesInputReverse(start, end)
-  }
-}
 
-export function setDatesInput(start, end) {
-  setInputDates(start, end)
-  START_DATE = dateToInt(start)
-  END_DATE = dateToInt(end)
-}
 
-export function setDatesInputReverse(start, end) {
-  setInputDates(end, start)
-  START_DATE = dateToInt(end)
-  END_DATE = dateToInt(start)
-}
 
-export function setInputDates(start, end) {
-  let s = formatInput(start)
-  let e = formatInput(end)
-  INPUT_DATES = (`${s}, ${e}`)
-}
 
-export function dateToInt(date) {
-  let numDate = date.map(Number)
-  return numDate
-}
 
-export function formatInput(input) {
-  return (input.join().replace(/,/g, ' '))
-}
+
+
+
+// export function formatInput(input) {
+//   return (input.join().replace(/,/g, ' '))
+// }
 
 export function getInputDates() {
   return INPUT_DATES
