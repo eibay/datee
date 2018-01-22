@@ -1,4 +1,5 @@
 import * as I from './input'
+import * as $ from './variables'
 import { formatArray, dateToInt } from './lib';
 
 export function setInputDate(start, end) {
@@ -13,24 +14,19 @@ export function setInputDate(start, end) {
 
 export function setDatesInput(start, end) {
   setInputDates(start, end)
-  I.START_DATE = dateToInt(start)
-  I.END_DATE = dateToInt(end)
+  $.setStartDate(dateToInt(start))
+  $.setEndDate(dateToInt(end))
 }
 
 export function setDatesInputReverse(start, end) {
   setInputDates(end, start)
-  I.START_DATE = dateToInt(end)
-  I.END_DATE = dateToInt(start)
+  $.setStartDate(dateToInt(end))
+  $.setEndDate(dateToInt(start))
 }
 
 export function setInputDates(start, end) {
   let s = formatArray(start, ",", " ")
   let e = formatArray(end, ",", " ")
   let dates = `${s}, ${e}`
-  I.setInputs(dates)
+  $.setInputs(dates)
 }
-
-// export function formatArray(array) {
-//   // return (array.join().replace(/a/g, b))
-//   return (array.join().replace(/,/g, ' '))
-// }
