@@ -2,6 +2,7 @@ import * as C from './constants'
 import * as V from './validate'
 import * as S from './set'
 import * as $ from './variables'
+import { isBetween } from './lib'
 
 export function getInput(input) {
   $.reset()
@@ -22,7 +23,7 @@ function splitDates(dates) {
 }
 
 export function compareDates(start, end) {
-  if (V.isBetween(start, end)) {
+  if (isBetween(start, end)) {
     // setYearValid(true)
     S.setInputDate(start, end)
   } else {
