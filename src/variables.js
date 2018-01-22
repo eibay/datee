@@ -67,3 +67,11 @@ export function setInputs(dates) {
 export function getInputs() {
   return INPUT_DATES
 }
+
+export function setIsYearValid(status) {
+  IS_YEAR_VALID = status
+}
+
+export function getIsYearValid() {
+  return IS_YEAR_VALID
+}

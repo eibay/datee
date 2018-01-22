@@ -7,9 +7,7 @@ export function isBetween(start, end) {
 }
 
 export function formatArray(input) {
-  // return (input.join().replace(/a/g, b))
   return (input.join().replace(/,/g, ' '))
-  
 }
 
 export function dateToInt(date) {

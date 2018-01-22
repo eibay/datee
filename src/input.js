@@ -1,6 +1,6 @@
 import * as C from './constants'
 import * as V from './validate'
-import * as S from './set'
+import * as P from './process'
 import * as $ from './variables'
 import { isBetween } from './lib'
 
@@ -24,10 +24,10 @@ function splitDates(dates) {
 
 export function compareDates(start, end) {
   if (isBetween(start, end)) {
-    // setYearValid(true)
-    S.setInputDate(start, end)
+    $.setIsYearValid(true)
+    P.setInputDate(start, end)
   } else {
-    // setYearValid(false)
+    $.setIsYearValid(false)
   }
 }
 
