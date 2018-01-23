@@ -20,7 +20,7 @@ export function reset() {
     IS_DAY_VALID = false
 }
 
-export function getDaysArray() {
+export function getDaysDifference() {
   return DAYS_DIFFERENCE
 }
 
@@ -112,18 +112,26 @@ export function isDayGreater() {
   return (END_DATE[0] >= START_DATE[0]) ? true : false
 }
 
-export function setYearsNormal() {
-  let years = (END_DATE[2] - START_DATE[2])
-  let days = years * ONE_YEAR
-  setDaysInYear(days)
+export function incrementStartDate(place) {
+  START_DATE[place] = START_DATE[place] + 1
 }
 
-export function setMonthsNormal() {
-  let days = (daysInMonthsCounter(START_DATE[1], END_DATE[1]))
-  setDaysInMonth(days)
+export function decrementStartDate(place) {
+  START_DATE[place] = START_DATE[place] - 1
 }
 
-export function setDaysNormal() {
-  let days = (END_DATE[0] - START_DATE[0])
-  setDaysInDay(days)
+export function incrementEndDate(place) {
+  END_DATE[place] = END_DATE[place] + 1
+}
+
+export function decrementEndDate(place) {
+  END_DATE[place] = END_DATE[place] - 1
+}
+
+export function setTotal(days) {
+  TOTAL = days
+}
+
+export function getTotal() {
+  return TOTAL
 }

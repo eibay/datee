@@ -7,5 +7,6 @@ export const
   MAX_DAY = 31,
   ONE_YEAR = 365,
   ONE_MONTH = 30,
-  FIRST_MONTH_INDEX = 1
+  FIRST_MONTH_INDEX = 1,
+  MONTH_MAP = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 

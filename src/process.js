@@ -1,12 +1,30 @@
-import * as I from './input'
+import * as Input from './input'
 import * as $ from './variables'
-import { formatArray, dateToInt } from './lib';
+import * as Lib from './lib';
 
 export function setInputDate(start, end) {
   if (end[2] > start[2]) {
     setDatesInput(start, end)
   } else if (end[2] == start[2]) {
-    // isMonthValid(start, end)
+    isMonthValid(start, end)
+  } else {
+    setDatesInputReverse(start, end)
+  }
+}
+
+export function isMonthValid(start, end) {
+  if (end[1] > start[1]) {
+    setDatesInput(start, end)
+  } else if (end[1] == start[1]) {
+    isDayValid(start, end)
+  } else {
+    setDatesInputReverse(start, end)
+  }
+}
+
+export function isDayValid(start, end) {
+  if (end[0] > start[0]) {
+    setDatesInput(start, end)
   } else {
     setDatesInputReverse(start, end)
   }
@@ -14,20 +32,35 @@ export function setInputDate(start, end) {
 
 export function setDatesInput(start, end) {
   setInputDates(start, end)
-  $.setStartDate(dateToInt(start))
-  $.setEndDate(dateToInt(end))
+  $.setStartDate(Lib.dateToInt(start))
+  $.setEndDate(Lib.dateToInt(end))
 }
 
 export function setDatesInputReverse(start, end) {
   setInputDates(end, start)
-  $.setStartDate(dateToInt(end))
-  $.setEndDate(dateToInt(start))
+  $.setStartDate(Lib.dateToInt(end))
+  $.setEndDate(Lib.dateToInt(start))
 }
 
 export function setInputDates(start, end) {
-  let s = formatArray(start, ",", " ")
-  let e = formatArray(end, ",", " ")
+  let s = Lib.formatArray(start, ",", " ")
+  let e = Lib.formatArray(end, ",", " ")
   let dates = `${s}, ${e}`
   $.setInputs(dates)
 }
 
+export function setDaysNormal() {
+  let days = $.getEndDate(0) - $.getStartDate(0)
+  $.setDaysInDay(days)
+}
+
+// export function setYearsNormal() {
+//   let years = (END_DATE[2] - START_DATE[2])
+//   let days = years * C.ONE_YEAR
+//   $.setDaysInYear(days)
+// }
+
+export function setMonthsNormal() {
+  let days = Lib.daysInMonthsCounter($.getStartDate(1), $.getEndDate(1))
+  $.setDaysInMonth(days)
+}

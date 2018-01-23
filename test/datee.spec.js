@@ -25,10 +25,10 @@ describe('Datee', function() {
     })
   })
   describe('UTGO. Unit Tests For Getting Output', function() {
-    it('4: should output a date', function() {
-      Input.getInput("01 03 2001, 01 03 2003")
+    it('4: should output days when only end date day is greater', function() {
+      Input.getInput("01 03 2001, 11 03 2001")
       let result = Output.getOutput()
-      expect(result).to.be.equal("01 03 2001, 01 03 2003")
+      expect(result).to.be.equal("01 03 2001, 11 03 2001, 10")
     })
   })
   describe('UTLY. Unit Tests For Leap Year', function() {
