@@ -105,7 +105,7 @@ describe('Datee', function() {
       expect(result).to.be.equal("28 02 2000, 01 03 2000, 2")
     })
     
-    it('17: should not output if no valid leap day on a leap month and a leap year ', function () {
+    it('18: should not output if no valid leap day on a leap month and a leap year ', function () {
       Input.getInput("27 02 2000, 28 02 2000")
       let result = Output.getOutput()
       expect(result).to.be.equal("27 02 2000, 28 02 2000, 1")
@@ -113,25 +113,25 @@ describe('Datee', function() {
   })
   
   describe('UTLY. Unit Tests For Leap Year', function() {
-    it('20: should count a leap year day in 4 years', function() {
+    it('19: should count a leap year day in 4 years', function() {
       Input.getInput("15 03 2001, 01 03 2004")
       countLeapYear()
       let result = $.getLeapYear()
       expect(result).to.be.equal(1)
     })
-    it('21: should count 2 leap year days in 8 years', function () {
+    it('20: should count 2 leap year days in 8 years', function () {
       Input.getInput("15 03 2001, 01 03 2004")
       countLeapYear()
       let result = $.getLeapYear()
       expect(result).to.be.equal(1)
     })
-    it('22: should count leap year day in leap year in a leap month', function () {
+    it('21: should count leap year day in leap year in a leap month', function () {
       Input.getInput("28 03 2000, 01 03 2000")
       countLeapYear()
       let result = $.getLeapYear()
       expect(result).to.be.equal(0)
     })
-    it('23: should not count a day if not valid leap year', function () {
+    it('22: should not count a day if not valid leap year', function () {
       Input.getInput("15 03 2001, 01 03 2003")
       countLeapYear()
       let result = $.getLeapYear()
