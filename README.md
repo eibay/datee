@@ -1,14 +1,17 @@
 # datee
-A simple library for dates comparison. Thanks to [@std/esm](https://www.npmjs.com/package/@std/esm) module which makes it possible to use ES6 syntax. 
-
+A simple library for dates comparison. The current application works on fixed format date :
+``` 
+ Input> 15 04 1969, 12 09 1945
+Output> 12 09 1945, 15 04 1969, 8616
+```
 Ensure you have all the necessary packages needed by running "npm install".
 To run this program, type the following in your terminal:
 
 ## As Bin:
 |  Steps to run as bin program |   Description                                   |
 | :----------------------------|:----------------------------------------------- |
-|  1. npm start                | similar to running "npm install -g"             |
-|  2. datee                    | run program with help as default to show options|
+|  a. npm start                | similar to running "npm install -g"             |
+|  b. datee                    | run program with help as default to show options|
 |                              |                                                 |
 
 
@@ -27,11 +30,10 @@ To run this program, type the following in your terminal:
 
 ## Credits:
 Credits to open source project below to help develop this:
- - [@std/esm](https://www.npmjs.com/package/@std/esm): enables JS modules and ES6 Syntax
- - 
-Functional testing made possible by: 
- - mocha and Chai
+ - [@std/esm](https://www.npmjs.com/package/@std/esm) : enables JS modules and ES6 Syntax
+ - [commander](https://www.npmjs.com/package/commander) : enables configurable cli options 
+ - [mocha](https://mochajs.org) : javascript test framework 
+ - [chai](http://chaijs.com) : BDD / TDD assertion library
 
-## License:
-License: MIT
+## License: ( MIT )
 
