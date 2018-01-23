@@ -12,7 +12,6 @@ To run this program, type the following in your terminal:
 | :----------------------------|:----------------------------------------------- |
 |  a. npm start                | similar to running "npm install -g"             |
 |  b. datee                    | run program with help as default to show options|
-|                              |                                                 |
 
 
 ## Direct: 
@@ -21,8 +20,6 @@ To run this program, type the following in your terminal:
 |  node ./src/index.js         | -h / --help | run with help option              |
 |  node ./src/index.js         | -c / --cli  | run using console/terminal option |
 |  node ./src/index.js         | -f / --file | loads "dates.txt" file and run    |
-|                              |                                                 | 
-
 
 
 ## Run and verify tests:
