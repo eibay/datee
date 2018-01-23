@@ -2,7 +2,7 @@ let
   DAYS_DIFFERENCE = [0, 0, 0, 0, 0],
   TOTAL = 0,
   LEAP_YEARS = [],
-  INPUT_DATES = (""),
+  DATES_DISPLAY = (""),
   START_DATE = [],
   END_DATE = [],
   IS_YEAR_VALID = false,
@@ -13,7 +13,7 @@ export function reset() {
   DAYS_DIFFERENCE = [0, 0, 0, 0, 0],
   TOTAL = 0,
   LEAP_YEARS = [],
-  INPUT_DATES = (""),
+  DATES_DISPLAY = (""),
   START_DATE = [],
   END_DATE = [],
   IS_YEAR_VALID = false,
@@ -61,12 +61,12 @@ export function setEndDate(date) {
   END_DATE = date
 }
 
-export function setInputs(dates) {
-  INPUT_DATES = dates
+export function setDatesDisplay(dates) {
+  DATES_DISPLAY = dates
 }
 
-export function getInputs() {
-  return INPUT_DATES
+export function getDatesDisplay() {
+  return DATES_DISPLAY
 }
 
 export function setIsYearValid(status) {

@@ -26,7 +26,7 @@ function splitDates(dates) {
 }
 
 export function compareDates(start, end) {
-  if (isBetween(start, end)) {
+  if (isBetween(start, end, C.MIN_YEAR, C.MAX_YEAR,)) {
     $.setIsYearValid(true)
     P.setInputDate(start, end)
   } else {

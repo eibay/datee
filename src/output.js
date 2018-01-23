@@ -40,5 +40,5 @@ export function getTotalDays() {
 }
 
 export function formatOutput() {
-  return (`${$.getInputs()}, ${$.getTotal()}`)
+  return (`${$.getDatesDisplay()}, ${$.getTotal()}`)
 }

@@ -1,4 +1,5 @@
-import * as Input from './input'
+import { getInput } from './input'
+import { getOutput } from './output'
 
 const readline = require('readline');
 const fs = require('fs');
@@ -10,7 +11,7 @@ const rl = readline.createInterface({
 
 rl.on('line', (line) => {
   console.log(`----------------------------------------`)
-  Input.getInput(line)
+  getInput(line)
   console.log(" Input> ", line)
-  console.log("Output> ", Output.getOutput())
+  console.log("Output> ", getOutput())
 });

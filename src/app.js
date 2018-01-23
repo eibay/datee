@@ -1,5 +1,7 @@
 import Readline from 'readline'
-import { getInput, verifyInput, getOutput, MIN_YEAR, MAX_YEAR } from './datee'
+import { getInput } from './input'
+import { getOutput } from "./output"
+import { validateInput } from "./validate";
 
 let messagePrompt = "Enter date as: 15 04 1969, 12 09 1945\n"
 
@@ -14,7 +16,7 @@ rl.prompt()
 rl.on('line', (line) => {
   console.log(`Input> ${line}`)
   getInput(line)
-  if (verifyInput()) {
+  if (validateInput()) {
     console.log(`Output> ${getOutput()}\n`)
     rl.prompt()
   } else {

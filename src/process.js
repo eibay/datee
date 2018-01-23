@@ -32,22 +32,22 @@ export function isDayValid(start, end) {
 }
 
 export function setDatesInput(start, end) {
-  setInputDates(start, end)
+  formatDatesDisplay(start, end)
   $.setStartDate(Lib.dateToInt(start))
   $.setEndDate(Lib.dateToInt(end))
 }
 
 export function setDatesInputReverse(start, end) {
-  setInputDates(end, start)
+  formatDatesDisplay(end, start)
   $.setStartDate(Lib.dateToInt(end))
   $.setEndDate(Lib.dateToInt(start))
 }
 
-export function setInputDates(start, end) {
+export function formatDatesDisplay(start, end) {
   let s = Lib.formatArray(start, ",", " ")
   let e = Lib.formatArray(end, ",", " ")
   let dates = `${s}, ${e}`
-  $.setInputs(dates)
+  $.setDatesDisplay(dates)
 }
 
 export function setDaysNormal() {

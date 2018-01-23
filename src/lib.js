@@ -1,9 +1,9 @@
 import * as C from './constants'
 import * as $ from './variables'
 
-export function isBetween(start, end) {
-  let a = (C.MAX_YEAR >= start[2] && start[2] >= C.MIN_YEAR)
-  let b = (C.MAX_YEAR >= end[2] && end[2] >= C.MIN_YEAR)
+export function isBetween(start, end, min, max) {
+  let a = (max >= start[2] && start[2] >= min)
+  let b = (max >= end[2] && end[2] >= min)
   return (a && b) ? true : false
 }
 
