@@ -2,6 +2,7 @@ import * as $ from "./variables"
 import * as P from "./process"
 import { countLeapYear } from "./leapyear"
 import * as Lib from "./lib";
+import * as C from "./constants"
 
 export function getOutput() {
   countLeapYear()
@@ -12,9 +13,9 @@ export function getOutput() {
 
 export function countDays() {
   $.isDayGreater ? P.setDaysNormal() : getDaysInMonths()
-  // $.isDayGreater() ? $.setDaysNormal() : $.getDaysInMonths()
-  // $.isMonthGreater() ? $.setMonthsNormal() : $.getDaysInYears()
-  // $.isYearGreater() ? $.setYearsNormal() : null 
+  $.isMonthGreater() ? P.setMonthsNormal() : getDaysInYears()
+  $.isYearGreater() ? P.setYearsNormal() : null 
+
 }
 
 export function getDaysInMonths() {
@@ -22,6 +23,16 @@ export function getDaysInMonths() {
   $.setDaysInDay(days)
   $.incrementStartDate(1)
 }
+
+export function getDaysInYears() {
+  let startMonthDays = Lib.daysInMonthsCounter($.getStartDate(1), C.MONTH_MAP.length)
+  let endMonthDays = Lib.daysInMonthsCounter(C.FIRST_MONTH_INDEX, $.getEndDate(1))
+  let days = startMonthDays + endMonthDays
+  $.setDaysInYearExtra(days)
+  $.decrementEndDate(2)
+  // END_DATE[2] = END_DATE[2] - 1
+} 
+
 
 export function getTotalDays() {
   let days = $.getDaysDifference()

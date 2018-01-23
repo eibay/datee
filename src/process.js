@@ -1,6 +1,7 @@
 import * as Input from './input'
 import * as $ from './variables'
-import * as Lib from './lib';
+import * as Lib from './lib'
+import * as C from './constants'
 
 export function setInputDate(start, end) {
   if (end[2] > start[2]) {
@@ -54,13 +55,15 @@ export function setDaysNormal() {
   $.setDaysInDay(days)
 }
 
-// export function setYearsNormal() {
-//   let years = (END_DATE[2] - START_DATE[2])
-//   let days = years * C.ONE_YEAR
-//   $.setDaysInYear(days)
-// }
-
 export function setMonthsNormal() {
   let days = Lib.daysInMonthsCounter($.getStartDate(1), $.getEndDate(1))
   $.setDaysInMonth(days)
 }
+
+export function setYearsNormal() {
+  let years = ($.getEndDate(2) - $.getStartDate(2))
+  let days = years * C.ONE_YEAR
+  $.setDaysInYear(days)
+}
+
+
