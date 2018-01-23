@@ -4,10 +4,13 @@ import { expect } from 'chai'
 import * as Input from '../src/input'
 import * as Output from '../src/output'
 import * as $ from '../src/variables'
+import * as C from '../src/constants'
 import {countLeapYear} from '../src/leapyear'
+import { validateInput } from "../src/validate";
 
 describe('Datee', function() {
   describe('UTGI.Unit Tests For Getting Input Functions', function() {
+
     it('1: should get input and set input dates accordingly', function () {
       Input.getInput("01 03 2001, 01 03 2002")
       let result = $.getInputs()
@@ -19,9 +22,9 @@ describe('Datee', function() {
       expect(result).to.be.equal("01 03 2001, 01 03 2003")
     })
     it('3 TODO: should get validate zero input dates', function () {
-      Input.getInput("00 01 2000, 01 01 2001")
-      let result = $.getInputs()
-      expect(result).to.be.equal("00 01 2000, 01 01 2001")
+      Input.getInput("00 01 1898, 01 01 2001")
+      let result = validateInput()
+      expect(result).to.be.equal(`Error 1: Input out of range. ${C.MIN_YEAR} - ${C.MAX_YEAR}`)
     })
   })
   describe('Functional Tests For Getting Output', function() {

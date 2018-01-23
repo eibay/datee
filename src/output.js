@@ -30,7 +30,6 @@ export function getDaysInYears() {
   let days = startMonthDays + endMonthDays
   $.setDaysInYearExtra(days)
   $.decrementEndDate(2)
-  // END_DATE[2] = END_DATE[2] - 1
 } 
 
 

@@ -2,9 +2,9 @@ import * as C from './constants'
 import * as $ from './variables'
 
 export function isBetween(start, end) {
-  return ((C.MAX_YEAR >= start[2] && start[2] >= C.MIN_YEAR))
-    && ((C.MAX_YEAR >= end[2] && end[2] >= C.MIN_YEAR))
-    ? true : false
+  let a = (C.MAX_YEAR >= start[2] && start[2] >= C.MIN_YEAR)
+  let b = (C.MAX_YEAR >= end[2] && end[2] >= C.MIN_YEAR)
+  return (a && b) ? true : false
 }
 
 export function formatArray(input) {
