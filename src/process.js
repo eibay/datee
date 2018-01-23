@@ -30,3 +30,4 @@ export function setInputDates(start, end) {
   let dates = `${s}, ${e}`
   $.setInputs(dates)
 }
+

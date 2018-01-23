@@ -4,6 +4,7 @@ import { expect } from 'chai'
 import * as Input from '../src/input'
 import * as Output from '../src/output'
 import * as $ from '../src/variables'
+import {countLeapYear} from '../src/leapyear'
 
 describe('Datee', function() {
   describe('UTGI.Unit Tests For Getting Input Functions', function() {
@@ -30,6 +31,31 @@ describe('Datee', function() {
       expect(result).to.be.equal("01 03 2001, 01 03 2003")
     })
   })
-
+  describe('UTLY. Unit Tests For Leap Year', function() {
+    it('5: should count a leap year day in 4 years', function() {
+      Input.getInput("15 03 2001, 01 03 2004")
+      countLeapYear()
+      let result = $.getLeapYear()
+      expect(result).to.be.equal(1)
+    })
+    it('6: should count 2 leap year days in 8 years', function () {
+      Input.getInput("15 03 2001, 01 03 2004")
+      countLeapYear()
+      let result = $.getLeapYear()
+      expect(result).to.be.equal(1)
+    })
+    it('7: should count leap year day in leap year in a leap month', function () {
+      Input.getInput("28 03 2000, 01 03 2000")
+      countLeapYear()
+      let result = $.getLeapYear()
+      expect(result).to.be.equal(0)
+    })
+    it('8: should not count a day if not valid leap year', function () {
+      Input.getInput("15 03 2001, 01 03 2003")
+      countLeapYear()
+      let result = $.getLeapYear()
+      expect(result).to.be.equal(0)
+    })
+  })
 })
 

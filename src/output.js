@@ -1,4 +1,14 @@
+import { countLeapYear } from "./leapyear"
+import * as $ from "./variables"
+import * as P from "./process"
+
 export function getOutput() {
-  return ("01 03 2001, 01 03 2003")
+  countLeapYear()
+  countDays()
+  // getTotalDays()
+  // formatOutPut()  
 }
 
+export function countDays() {
+  
+}
