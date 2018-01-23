@@ -4,8 +4,7 @@
   "description": "CLI implementation of Date Difference counter Daty",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "npm test -w",
+    "start": "npm install -g",
     "test": "mocha ./test/index.spec.js -u bdd -R spec -t 500 -w"
   },
   "devDependencies": {
@@ -38,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/eibay/datee/issues"
   },
-  "homepage": "https://github.com/eibay/datee#readme"
+  "homepage": "https://github.com/eibay/datee#readme",
+  "dependencies": {
+    "commander": "2.13.0"
+  }
 }

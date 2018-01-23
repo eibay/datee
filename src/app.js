@@ -14,7 +14,8 @@ const rl = Readline.createInterface({
 rl.prompt()
 
 rl.on('line', (line) => {
-  console.log(`Input> ${line}`)
+  console.log(`----------------------------------------`)
+  console.log(` Input> ${line}`)
   getInput(line)
   if (validateInput()) {
     console.log(`Output> ${getOutput()}\n`)
